@@ -1,7 +1,7 @@
 <?php
 	include("templates/include/header.php")
 ?>
-<div id="adminHeader">
+<div class="adminHeader">
 	<h2>Tuthoth Admin</h2>
 	<p>
 		You are logged in as

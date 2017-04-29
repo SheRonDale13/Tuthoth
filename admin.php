@@ -32,7 +32,7 @@
 		$results['pageTitle'] = "Admin login | Tuthoth";
 		if(isset($_POST['login'])) {
 			if($_POST['username'] == ADMIN_USERNAME && $_POST['password'] == ADMIN_PASSWORD) {
-				$_SESSION['usename'] = ADMIN_USERNAME;
+				$_SESSION['username'] = ADMIN_USERNAME;
 				header("Location: admin.php");
 			} else {
 				$results['errorMessage'] = "Incorrect username or password. Please try again.";
