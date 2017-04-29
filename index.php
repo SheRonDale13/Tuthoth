@@ -6,6 +6,13 @@
         <link rel="stylesheet" href="/Tuthoth/css/normalize.css">
     </head>
         <body>
-        <h1>Font test</h1>
+        <div class="container">
+        	<div class="header">
+        		<h1>Tuthoth</h1>
+        	</div>
+        	<div class="content-container">
+        		Welcome to our website
+        	</div>
+        </div>
         </body>
 </html>
