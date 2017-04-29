@@ -11,11 +11,11 @@
 	define("ADMIN_PASSWORD", "mypass");
 	require(CLASS_PATH . "/Article.php");
 
-/*	function handleException($exception) {
+	function handleException($exception) {
 		echo "Sorry, a problem occurred. Please try later.";
 		error_log($exception -> getMessage());
 	}
-	set_exception_handler('handleException');*/
+	set_exception_handler('handleException');
 ?>
 
 

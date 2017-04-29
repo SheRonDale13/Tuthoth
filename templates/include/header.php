@@ -7,5 +7,5 @@
 </head>
 <body>
 	<div class="container">
-		<a href="."><img class="logo" src="./images/logo.png" alt="Tuthoth"></a>
+		<a href="."><img class="logo" src="./images/logo.gif" alt="Tuthoth"></a>
 

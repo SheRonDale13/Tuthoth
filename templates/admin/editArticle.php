@@ -40,7 +40,7 @@
 		</li>
 		<li>
 			<label for="summary">Article Summary</label>
-			<textarea name="summaray" id="summary" placeholder="Brief description of the article" required
+			<textarea name="summary" id="summary" placeholder="Brief description of the article" required
 			maxlength="1000" style="height: 5em;">
 				<?php
 					echo htmlspecialchars($results['article']->summary)

@@ -45,7 +45,7 @@
 	}
 
 	function logout() {
-		unset($_SESSION['usernmae']);
+		unset($_SESSION['username']);
 		header("Location: admin.php");
 	}
 
@@ -71,7 +71,7 @@
 		$results['pageTitle'] = "Edit Article";
 		$results['formAction'] = "editArticle";
 		if(isset($_POST['saveChanges'])) {
-			if(!$article = Article::getById((int)$_POST['articleId'])) {
+			if(!$article = Article::getById((int)$_GET['articleId'])) {
 				header("Location: admin.php?error=articleNotFound");
 				return;
 			}

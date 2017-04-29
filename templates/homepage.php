@@ -17,7 +17,7 @@
 		</li>
 	<?php } ?>
 </ul>
-<p><a href="./?action=archive">Article Archive</a></p>
+<p class="homepage-archive"><a href="./?action=archive">Article Archive</a></p>
 <?php
 	include("templates/include/footer.php");
 ?>
