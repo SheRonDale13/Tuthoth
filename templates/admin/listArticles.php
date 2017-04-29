@@ -10,9 +10,8 @@
 				echo htmlspecialchars($_SESSION['username'])
 			?>
 		</b>
-		<a href="admin.php?action=logout">
-			Logout
-		</a>
+		.
+		<a href="admin.php?action=logout">Logout</a>
 	</p>
 </div>
 <h1>All Articles</h1>
@@ -48,7 +47,7 @@
 	<?php
 		foreach($results['articles'] as $article) {
 	?>
-			<tr onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id'">
+			<tr onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id ?>'">
 				<td>
 					<?php
 						echo date('j M Y', $article->publicationDate)
