@@ -7,8 +7,8 @@
 			break;
 		case 'viewArticle':
 			viewArticle();
-			brea;
-		case default:
+			break;
+		default:
 			homepage();
 	}
 

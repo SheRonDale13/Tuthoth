@@ -64,7 +64,7 @@
 		  $st->bindValue( ":content", $this->content, PDO::PARAM_STR );
 		  $st->execute();
 		  $this->id = $conn->lastInsertId();
-		  $conn = null
+		  $conn = null;
 	  }
 
 	  public function update() {
@@ -88,4 +88,5 @@
 		$st->execute();
 		$conn = null;
 	}
+}
 ?>
