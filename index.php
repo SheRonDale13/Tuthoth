@@ -27,7 +27,7 @@
 			return;
 		}
 		$results = array();
-		$results['article'] = Articles::getById((int)$_GET['articleId']);
+		$results['article'] = Article::getById((int)$_GET['articleId']);
 		$results['pageTitle'] = $results['article']->title." | Tuthoth";
 		require(TEMPLATE_PATH."/viewArticle.php");
 	}
