@@ -39,7 +39,7 @@
 				require(TEMPLATE_PATH."/admin/loginForm.php");
 			}
 		} else {
-			require(TEMPLAGE_PATH."/admin/loginForm.php");
+			require(TEMPLATE_PATH."/admin/loginForm.php");
 		}
 	}
 
