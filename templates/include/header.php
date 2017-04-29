@@ -7,10 +7,5 @@
 </head>
 <body>
 	<div class="container">
-		<a href="."><img id="logo" src="logo.jpg" alt="Tuthoth"></a>
-		<div class="footer">
-			Tuthoth &copy; 2011. All rights reserved. <a href="admin.php">Site Admin</a>
-		</div>
-	</div>
-</body>
-</html>
+		<a href="."><img id="logo" src="./images/logo.png" alt="Tuthoth"></a>
+

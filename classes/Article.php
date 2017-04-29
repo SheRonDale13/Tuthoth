@@ -42,7 +42,7 @@
 			//used mysql_real_escape_string($order) in place of $order
 			$st = $conn->prepare( $sql );
 			$st->bindValue( ":numRows", $numRows, PDO::PARAM_INT );
-			$st->execute();s
+			$st->execute();
 			$list = array();
 			while ( $row = $st->fetch() ) {
 			  	$article = new Article( $row );
