@@ -3,11 +3,11 @@
 	session_start();
 	$action = isset($_GET['action']) ? $_GET['action'] : "";
 	$username = isset($_SESSION['username']) ? $_SESSION['username'] : "";
-	if($action != 'login' || $action != 'logout' || !$username) {
+	if($action != 'login' && $action != 'logout' && !$username) {
 		login();
 		exit;
 	}
-	switch(action) {
+	switch($action) {
 		case 'login':
 			login();
 			break;
@@ -33,6 +33,7 @@
 		if(isset($_POST['login'])) {
 			if($_POST['username'] == ADMIN_USERNAME && $_POST['password'] == ADMIN_PASSWORD) {
 				$_SESSION['username'] = ADMIN_USERNAME;
+				echo "this is executed";
 				header("Location: admin.php");
 			} else {
 				$results['errorMessage'] = "Incorrect username or password. Please try again.";
@@ -60,7 +61,7 @@
 		} else if(isset($_POST['cancel'])) {
 			header("Location: admin.php");
 		} else {
-			$article = new Article;
+			$results['article'] = new Article;
 			require(TEMPLATE_PATH."/admin/editArticle.php");
 		}
 	}

@@ -55,7 +55,7 @@
 				</td>
 				<td>
 					<?php
-						echo article->title
+						echo $article->title
 					?>
 				</td>
 			</tr>

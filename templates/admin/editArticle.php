@@ -1,5 +1,5 @@
 <?php
-	include("templates/incluce/header.php")
+	include("templates/include/header.php")
 ?>
 <div class="adminHeader">
 	<h2>Tuthoth Admin</h2>
