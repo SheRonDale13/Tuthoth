@@ -27,6 +27,7 @@
 			listArticles();
 	}
 
+
 	function login() {
 		$results = array();
 		$results['pageTitle'] = "Admin login | Tuthoth";
@@ -71,13 +72,15 @@
 		$results['pageTitle'] = "Edit Article";
 		$results['formAction'] = "editArticle";
 		if(isset($_POST['saveChanges'])) {
-			if(!$article = Article::getById((int)$_GET['articleId'])) {
+			if(!$article = Article::getById((int)$_POST['articleId'])) {
 				header("Location: admin.php?error=articleNotFound");
 				return;
 			}
 			$article->storeFormValues($_POST);
 			$article->update();
 			header("Location: admin.php?status=changesSaved");
+		} else if(isset($_POST['cancel'])) {
+			header("Location: admin.php");
 		} else {
 			$results['article'] = Article::getById((int)$_GET['articleId']);
 			require(TEMPLATE_PATH."/admin/editArticle.php");
@@ -92,6 +95,7 @@
 		$article->delete();
 		header("Location: admin.php?status=articleDeleted");
 	}
+
 
 	function listArticles() {
 		$results = array();
