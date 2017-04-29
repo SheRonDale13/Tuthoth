@@ -1,9 +1,6 @@
 body {
     background-image: url("/images/bg.jpg");
     background-color: honeydew;
-}
-
-font {
-	font-family: 'Helvetica' sans-serif;
+	font-family: "Helvetica", sans-serif;
 }
 
