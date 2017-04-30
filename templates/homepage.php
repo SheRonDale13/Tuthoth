@@ -7,6 +7,8 @@
 		<tr>
 			<td>
 				<span class="pubDate"><?php echo date('j F', $article->publicationDate)?></span>
+				<br>
+				<span>Published By</span>
 			</td>
 			<td>
 				<h2>

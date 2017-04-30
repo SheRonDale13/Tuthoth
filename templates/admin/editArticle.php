@@ -41,20 +41,16 @@
 		<li>
 			<label for="summary">Article Summary</label>
 			<textarea name="summary" id="summary" placeholder="Brief description of the article" required
-			maxlength="1000" style="height: 5em;">
-				<?php
+			maxlength="1000" style="height: 5em;"><?php
 					echo htmlspecialchars($results['article']->summary)
-				?>
-			</textarea>
+				?></textarea>
 		</li>
 		<li>
 			<label for="content">Article Content</label>
 			<textarea name="content" id="content" placeholder="The HTML content of the article" required
-			maxlength="100000" style="height: 30em;">
-				<?php
+			maxlength="100000" style="height: 30em;"><?php
 					echo $results['article']->content
-				?>
-			</textarea>
+				?></textarea>
 		</li>
 		<li>
 			<label for="publicationDate">Publication Date</label>
