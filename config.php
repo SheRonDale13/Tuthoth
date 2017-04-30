@@ -10,6 +10,7 @@
 	define("ADMIN_USERNAME", "tuthother");
 	define("ADMIN_PASSWORD", "password13");
 	require(CLASS_PATH . "/Article.php");
+	require(CLASS_PATH . "/Category.php");
 
 	/*function handleException($exception) {
 		echo "Sorry, a problem occurred. Please try later.";
