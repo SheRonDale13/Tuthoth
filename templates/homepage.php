@@ -5,7 +5,7 @@
 	<?php
 		foreach($results['articles'] as $article) {?>
 		<tr>
-			<td>
+			<td class="headlines-meta">
 				<span class="pubDate"><?php echo date('j F', $article->publicationDate)?></span>
 				<br>
 				<span>Published By</span>

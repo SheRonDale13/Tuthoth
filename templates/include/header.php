@@ -9,6 +9,6 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<h1 class="title">TUTHOTH</h1>
+			<div class="title-container"><h1 class="title">TUTHOTH</h1></div>
 			<a class="logo-container" href="."><img class="logo" src="./images/logo.gif" alt="Tuthoth"></a>
 		</div>

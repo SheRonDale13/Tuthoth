@@ -3,16 +3,15 @@
 ?>
 <div class="adminHeader">
 	<h2>Tuthoth Admin</h2>
-	<p>
-		You are logged in as
+	<div class="logout-container">
+		<a href="admin.php?action=logout">Log out</a>
+		<span>You are logged in as
 		<b>
 			<?php
 				echo htmlspecialchars($_SESSION['username'])
 			?>
-		</b>
-		.
-		<a href="admin.php?action=logout">Log out</a>
-	</p>
+		</b></span>
+	</div>
 </div>
 <h1>
 	<?php

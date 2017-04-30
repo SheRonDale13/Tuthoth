@@ -3,16 +3,15 @@
 ?>
 <div class="adminHeader">
 	<h2>Tuthoth Admin</h2>
-	<p>
-		You are logged in as
+	<div class="logout-container">
+		<a href="admin.php?action=logout">Logout</a>
+		<span>You are logged in as
 		<b>
 			<?php
 				echo htmlspecialchars($_SESSION['username'])
 			?>
-		</b>
-		.
-		<a href="admin.php?action=logout">Logout</a>
-	</p>
+		</b></span>
+	</div>
 </div>
 <h1>All Articles</h1>
 <?php
@@ -39,7 +38,7 @@
 <?php
 		}
 ?>
-<table>
+<table class="list-container">
 	<tr>
 		<th>Publication Date</th>
 		<th>Article</th>

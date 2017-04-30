@@ -6,6 +6,11 @@ body {
 	line-height: 1.5em;
 }
 
+.title-container {
+	display: inline;
+	height: 100px;
+}
+
 .container {
 	width: 960px;
 	background: #fff;
@@ -17,6 +22,7 @@ body {
 }
 
 .header {
+	margin-bottom: 100px;
 	background-color: orange;
 	position: relative;
 	top: -10px;
@@ -68,10 +74,6 @@ h2 a {
 	padding-left: 100px;
 	list-style: none;
 	width: 75%;
-}
-
-.homepage-archive {
-	padding-left: 100px;
 }
 
 .headlines li {
@@ -190,6 +192,11 @@ input:valid, textarea:valid {
 	margin: 40px 0 0 0;
 }
 
+.button {
+	margin-top: 10px;
+	padding-left: 250px;
+}
+
 input[type='submit'] {
 	display: inline;
 	margin: 0 20px;
@@ -248,11 +255,24 @@ tr:nth-child(odd) {
 	background: #fff4cf;
 }
 
+.logout-container {
+	width: 100%;
+}
+
+.headlines-meta {
+	width: 100px;
+}
+
+.logout-container a, .logout-container span{
+	padding-right: 10px;
+	float: right;
+}
+
 tr:nth-child(even) {
 	background: #fff;
 }
 
-tr:hover {
+.list-container tr:hover {
 	background: #ddd;
 	cursor: pointer;
 }
@@ -280,3 +300,5 @@ tr:hover {
 	border: 1px solid #800;
 	color: #fff;
 }
+
+
