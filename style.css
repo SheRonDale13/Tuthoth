@@ -301,4 +301,21 @@ tr:nth-child(even) {
 	color: #fff;
 }
 
+.category {
+	font-style: italic;
+	font-weight: normal;
+	font-size: 60%;
+	color: #999;
+	display: block;
+	line-height: 2em;
+}
 
+.category a {
+	color: #999;
+	text-decoration: underline;
+}
+
+h3.categoryDescription {
+	margin-top: -20px;
+	margin-bottom: 40px;
+}
