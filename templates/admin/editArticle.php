@@ -1,18 +1,7 @@
 <?php
 	include("templates/include/header.php")
 ?>
-<div class="adminHeader">
-	<h2>Tuthoth Admin</h2>
-	<div class="logout-container">
-		<a href="admin.php?action=logout">Log out</a>
-		<span>You are logged in as
-		<b>
-			<?php
-				echo htmlspecialchars($_SESSION['username'])
-			?>
-		</b></span>
-	</div>
-</div>
+<?php include "templates/admin/include/header.php" ?>
 <h1>
 	<?php
 		echo $results['pageTitle']
@@ -50,6 +39,19 @@
 			maxlength="100000" style="height: 30em;"><?php
 					echo $results['article']->content
 				?></textarea>
+		</li>
+		<li>
+			<label for="categoryId">Article Category</label>
+			<select>
+				<option value="0" <?php echo !$results['article']->categoryId ? "selected" : "" ?>>
+					(none)
+					<?php foreach($results['categories'] as $category)  { ?>
+						<option value="<?php echo $category->id ?>" <?php echo ($category->id == $results['article']->categoryId) ? "selected" : "" ?>>
+							<?php echo htmlspecialchars($category->name) ?>
+						</option>
+					<?php } ?>
+				</option>
+			</select>
 		</li>
 		<li>
 			<label for="publicationDate">Publication Date</label>

@@ -7,7 +7,7 @@
 		public function __construct($data = array()) {
 			if(isset($data['id'])) $this->id = (int)$data['id'];
 			if(isset($data['name'])) $this->name = preg_replace( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['name']);
-			if(iiset($data['description'])) $this->description = preg_replace( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['description']);
+			if(isset($data['description'])) $this->description = preg_replace( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['description']);
 		}
 
 		public function storeFormValues($param) {
@@ -25,7 +25,7 @@
 			if($row) return new Category($row);
 		}
 
-		public static function getList($numRows = 1000000, $order="name ASC") {
+		public static function getList($numRows = 100000, $order="name ASC") {
 			$conn = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
 			$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM categories ORDER BY " . $order . " LIMIT :numRows";
 			$st = $conn->prepare($sql);
@@ -51,6 +51,27 @@
 			$st->bindValue(":description", $this->description, PDO::PARAM_STR);
 			$st->execute();
 			$this->id = $conn->lastInsertId();
+			$conn = null;
+		}
+
+		public function update() {
+			if ( is_null( $this->id ) ) trigger_error ( "Category::update(): Attempt to update a Category object that does not have its ID property set.", E_USER_ERROR );
+			$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+			$sql = "UPDATE categories SET name=:name, description=:description WHERE id = :id";
+			$st = $conn->prepare ( $sql );
+			$st->bindValue( ":name", $this->name, PDO::PARAM_STR );
+			$st->bindValue( ":description", $this->description, PDO::PARAM_STR );
+			$st->bindValue( ":id", $this->id, PDO::PARAM_INT );
+			$st->execute();
+			$conn = null;
+  		}
+
+		public function delete() {
+			if ( is_null( $this->id ) ) trigger_error ( "Category::delete(): Attempt to delete a Category object that does not have its ID property set.", E_USER_ERROR );
+			$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+			$st = $conn->prepare ( "DELETE FROM categories WHERE id = :id LIMIT 1" );
+			$st->bindValue( ":id", $this->id, PDO::PARAM_INT );
+			$st->execute();
 			$conn = null;
 		}
 	}

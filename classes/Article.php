@@ -59,16 +59,14 @@
 	  }
 
 	  public function insert() {
-		  $authorId = 1;
 		  if ( !is_null( $this->id ) ) trigger_error ( "Article::insert(): Attempt to insert an Article object that already has its ID property set (to $this->id).", E_USER_ERROR );
 		  $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		  $sql = "INSERT INTO articles(publicationDate, title, summary, content, authorId, categoryId) VALUES(           							FROM_UNIXTIME(:publicationDate), :title, :summary, :content, :authorId, :categoryId)";
+		  $sql = "INSERT INTO articles(publicationDate, title, summary, content, categoryId) VALUES(FROM_UNIXTIME(:publicationDate), :title, :summary, :content, :categoryId)";
 		  $st = $conn->prepare ( $sql );
 		  $st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT);
 		  $st->bindValue( ":title", $this->title, PDO::PARAM_STR);
 		  $st->bindValue( ":summary", $this->summary, PDO::PARAM_STR);
 		  $st->bindValue( ":content", $this->content, PDO::PARAM_STR);
-		  $st->bindValue( ":authorId", $authorId, PDO:PARAM_INT);
 		  $st->bindValue( ":categoryId", $this->categoryId, PDO::PARAM_INT);
 		  $st->execute();
 		  $this->id = $conn->lastInsertId();
@@ -76,16 +74,14 @@
 	  }
 
 	  public function update() {
-		 $authorId = 1;
 		if ( is_null( $this->id ) ) trigger_error ( "Article::update(): Attempt to update an Article object that does not have its ID property set.", E_USER_ERROR );
 		$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		$sql = "UPDATE articles SET publicationDate=FROM_UNIXTIME(:publicationDate), title=:title, summary=:summary, content=:content, authorId=:authorId, categoryId=:categoryId WHERE id = :id";
+		$sql = "UPDATE articles SET publicationDate=FROM_UNIXTIME(:publicationDate), title=:title, summary=:summary, content=:content, categoryId=:categoryId WHERE id = :id";
 		$st = $conn->prepare ( $sql );
 		$st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );
 		$st->bindValue( ":title", $this->title, PDO::PARAM_STR );
 		$st->bindValue( ":summary", $this->summary, PDO::PARAM_STR );
 		$st->bindValue( ":content", $this->content, PDO::PARAM_STR );
-		$st->bindValue( ":authorId", $authorId, PDO::PARAM_INT);
 		$st->bindValue( ":categoryId", $this->categoryId, PDO::PARAM_INT);
 		$st->bindValue( ":id", $this->id, PDO::PARAM_INT );
 		$st->execute();

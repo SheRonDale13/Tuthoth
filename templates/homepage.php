@@ -8,7 +8,17 @@
 			<td class="headlines-meta">
 				<span class="pubDate"><?php echo date('j F', $article->publicationDate)?></span>
 				<br>
-				<span>Published By</span>
+				<?php
+					if($article->categoryId) {
+				?>
+						<span class="category">
+							<a href=".?action=archive&amp;categoryId=<?php echo $article->categoryId ?>">
+								<?php echo htmlspecialchars($article->title) ?>
+							</a>
+						</span>
+				<?php
+					}
+				?>
 			</td>
 			<td>
 				<h2>

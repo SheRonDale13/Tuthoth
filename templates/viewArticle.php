@@ -24,6 +24,15 @@
 				<?php
 					echo " ". date('j F Y', $results['article']->publicationDate)
 				?>
+				<?php
+					if($results['category']) {
+				?>
+						in <a href="./?action=archive&amp;categoryId=<?php echo $results['category']->id ?>">
+							<?php echo htmlspecialchars($results['category']->name) ?>
+						</a>
+				<?php
+					}
+				?>
 			</p>
 		</td>
 	</tr>

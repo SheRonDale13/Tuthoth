@@ -1,7 +1,16 @@
 <?php
 	include("templates/include/header.php");
 ?>
-<h1>Article Archive</h1>
+<h1><?php echo htmlspecialchars($results['pageHeading']) ?></h1>
+<?php
+	if($results['category']) {
+?>
+		<h3 class="categoryDescription">
+			<?php echo htmlspecialchars($results['category']->description) ?>
+		</h3>
+<?php
+	}
+?>
 <ul class="headlines archive">
 	<?php
 		foreach($results['articles'] as $article) { ?>
@@ -17,6 +26,17 @@
 							echo htmlspecialchars($article->title)
 						?>
 					</a>
+					<?php
+						if(!$results['category'] && $article->categoryId) {
+					?>
+							<span class="category">in 
+								<a href=".?action=archive&amp;categoryId=<?php echo $article->categoryId ?>">
+									<?php echo htmlspecialchars($results['categories'][$article->categoryId]->name) ?>
+								</a>
+							</span>
+					<?php
+						}
+					?>
 				</h2>
 				<p class="summary">
 					<?php

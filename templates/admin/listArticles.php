@@ -1,18 +1,7 @@
 <?php
 	include("templates/include/header.php")
 ?>
-<div class="adminHeader">
-	<h2>Tuthoth Admin</h2>
-	<div class="logout-container">
-		<a href="admin.php?action=logout">Logout</a>
-		<span>You are logged in as
-		<b>
-			<?php
-				echo htmlspecialchars($_SESSION['username'])
-			?>
-		</b></span>
-	</div>
-</div>
+<?php include "templates/admin/include/header.php" ?>
 <h1>All Articles</h1>
 <?php
 		if(isset($results['errorMessage'])) {
@@ -42,6 +31,7 @@
 	<tr>
 		<th>Publication Date</th>
 		<th>Article</th>
+		<th>Category</th>
 	</tr>
 	<?php
 		foreach($results['articles'] as $article) {
@@ -56,6 +46,9 @@
 					<?php
 						echo $article->title
 					?>
+				</td>
+				<td>
+					<?php echo $results['categories'][$article->categoryId]->name ?>
 				</td>
 			</tr>
 	<?php
