@@ -11,10 +11,10 @@
 <?php
 	}
 ?>
-<ul class="headlines archive">
+<table>
 	<?php
 		foreach($results['articles'] as $article) { ?>
-			<li>
+			<tr>
 				<h2>
 					<span class="pubDate">
 						<?php
@@ -43,10 +43,10 @@
 						echo htmlspecialchars($article->summary)
 					?>
 				</p>
-			</li>
+			</tr>
 	<?php	}
 	?>
-</ul>
+</table>
 <p>
 	<?php
 		echo $results['totalRows'].' '

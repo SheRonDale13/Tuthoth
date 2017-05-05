@@ -42,7 +42,7 @@
 		</li>
 		<li>
 			<label for="categoryId">Article Category</label>
-			<select>
+			<select name="categoryId" id="categoryId">
 				<option value="0" <?php echo !$results['article']->categoryId ? "selected" : "" ?>>
 					(none)
 					<?php foreach($results['categories'] as $category)  { ?>

@@ -157,6 +157,7 @@ function listCategories() {
 	require(TEMPLATE_PATH . "/admin/listCategories.php");
 }
 
+
 function newCategory() {
 	$results = array();
 	$results['pageTitle'] = "New Article Category";
@@ -174,6 +175,7 @@ function newCategory() {
 	}
 }
 
+
 function editCategory() {
 	$results = array();
 	$results['pageTitle'] = "Edit Article Category";
@@ -189,9 +191,9 @@ function editCategory() {
 	} elseif(isset($_POST['cancel'])) {
 		header("Location: admin.php?action=listCategories");
 	} else {
-		$results['category'] = Category::getById((int)$_GET('categoryId'));
-		require(TEMPLATE_PATH > "/admin/editCategory.php");
-	}
+		$results['category'] = Category::getById((int)$_GET['categoryId']);
+		require(TEMPLATE_PATH . "/admin/editCategory.php");
+  }
 }
 
 function deleteCategory() {

@@ -21,8 +21,7 @@
         </li>
         <li>
             <label for="description">Description</label>
-            <textarea name="desciption" id="description" placeholder="Brief description of the category" required maxlength="1000"
-            style="height:5em;"><?php echo htmlspecialchars($results['category']->description) ?></textarea>
+            <textarea name="description" id="description" placeholder="Brief description of the category" required maxlength="1000" style="height:5em;"><?php echo htmlspecialchars($results['category']->description) ?></textarea>
         </li>
     </ul>
     <div class="buttons">
@@ -30,6 +29,7 @@
         <input type="submit" formnovalidate name="cancel" value="Cancel">
     </div>
 </form>
+
 <?php
     if($results['category']->id) {
 ?>
@@ -42,3 +42,4 @@
     }
 ?>
 <?php include "templates/include/footer.php" ?>
+

@@ -10,7 +10,7 @@
 			if(isset($data['description'])) $this->description = preg_replace( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['description']);
 		}
 
-		public function storeFormValues($param) {
+		public function storeFormValues($params) {
 			$this->__construct($params);
 		}
 
